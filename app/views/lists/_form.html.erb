@@ -1,0 +1,23 @@
+<% if @list.errors.present? %>
+  <ul>
+    <% @list.errors.each do |error, message| %>
+      <li> <%= "#{error.capitalize}  #{message}" %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="form container">
+<%= form_for @list do|f| %>
+<div class="form-group">
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title, class: "form-control" %>
+<div class="form-group">
+  <%= f.label :date, "Due Date" %>
+  <%= f.text_field :due_date, class: "form-control"%>
+<div class="form-group">
+  <%= f.label :description, "Description" %>
+  <%= f.text_area :description, class: "form-control"%>
+
+  <%= f.submit  %>
+<% end %>
+</div>

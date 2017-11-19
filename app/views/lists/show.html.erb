@@ -1,0 +1,13 @@
+<div class="wrapper">
+
+  <h1 class="title"><%= @list.title %></h1>
+
+  <p class="due_date">Due date<%= @list.due_date %></p>
+</div>
+  <p id="description">
+  <%= simple_format(@list.description) %></p>
+
+  <div class="itembox_btn">
+
+      <%= link_to 'Back to index', lists_path, class: 'btn btn-default' %>
+  </div>

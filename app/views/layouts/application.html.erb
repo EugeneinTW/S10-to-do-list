@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ToDoList</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+   <% if flash.present? %>
+     <div class="amendmsg">
+       <p style="color: green" align="center"><%= flash[:notice] %></p>
+       <p style="color: red" align="center" ><%= flash[:alert] %></p>
+     </div>
+   <% end %>
+   <%= yield %>
+
+  </body>
+</html>
